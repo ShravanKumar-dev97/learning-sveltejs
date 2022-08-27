@@ -1,7 +1,7 @@
 <script>
     export let userName;
     export let jobTitle;
-    export let description;
+    export let paymail;
     export let userImage;
 </script>
 
@@ -13,13 +13,14 @@
         <div class="heading">
             <h1>{userName}</h1>
             <h2>{jobTitle}</h2>
+            
         </div>
     </header>
 
     <hr>
 
-    <div>
-        <p>{description}</p>
+    <div class="wallet">
+        <p>{paymail}</p>
     </div>
 </div>
 
@@ -34,7 +35,7 @@
     }
 
     .fullCard:hover{
-        border: 1px solid #ff3e00;
+        border: 2px solid #ff3e00;
         box-shadow: 0 4px 16px 0 rgba(255,62,0,0.15);
     }
 
@@ -49,7 +50,7 @@
     }
 
     img {
-        border-radius: 8%;
+        border-radius: 50%;
         width: 120px;
         height: 120px;
         margin: 15px;
@@ -68,5 +69,7 @@
         font-size: 1.5em;
         font-weight: 300;
     }
+
+    
 
 </style>
