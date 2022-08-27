@@ -1,10 +1,11 @@
 <script>
 	import ContactCard from './ContactCard.svelte'
 
-	let name = "";
+	let name = "Shravan Kumar";
 	let age = 25;
-	let title = "";
-	let description = "";
+	let title = "Developer";
+	let description = "I build on BitcoinSV blockchain";
+	let imageURL = "https://pbs.twimg.com/profile_images/1491435592722554885/CVjBwy4x_400x400.jpg";
 	
 
 	$: newName = name.toUpperCase();
@@ -38,30 +39,40 @@
 </script>
 
 <main>
-	<h1>Hello {newName}!</h1>
+	<div>
+		<h1>Hola {name}!</h1>
 
-	<!-- by default the data flow in svelte is unidirectional -->
-	<!-- <input type="text" value="{name}" on:input="{nameInput}" placeholder="Enter your Name"> -->
+		<!-- by default the data flow in svelte is unidirectional -->
+		<!-- <input type="text" value="{name}" on:input="{nameInput}" placeholder="Enter your Name"> -->
 
-	<!-- <button on:click="{changeName}">Change Name</button> -->
-	<!-- <button on:click="{decrementAge}">Back to Past</button> -->
-	<!-- <button on:click="{incrementAge}">Foward to Future</button> -->
+		<!-- <button on:click="{changeName}">Change Name</button> -->
+		<!-- <button on:click="{decrementAge}">Back to Past</button> -->
+		<!-- <button on:click="{incrementAge}">Foward to Future</button> -->
 
-	<!-- Two-way Binding  shortcut-->
-	<input type="text" bind:value="{name}" placeholder="Enter your Name"> <br>
-	<input type="text" bind:value="{title}" placeholder="Job Title"> <br>
-	<input type="text" bind:value="{description}" placeholder="Description">
+		<!-- Two-way Binding  shortcut-->
+		<input type="text" bind:value="{name}" placeholder="Enter your Name"> <br>
+		<input type="text" bind:value="{title}" placeholder="Job Title"> <br>
+		<input type="text" bind:value="{imageURL}" placeholder="Avatar Path"> <br>
+		<input type="text" bind:value="{description}" placeholder="Description">
+	</div>
 
-	<ContactCard 
-		userName="{name}" 
-		jobTitle="{title}"
-		description="{description}"
-	/>
+	<br>
+	<br>
+
+	<div>
+		<ContactCard 
+			userName="{name}" 
+			jobTitle="{title}"
+			userImage="{imageURL}"
+			description="{description}"
+		/>
+	</div>
 	
 </main>
 
 <style>
 	main {
+		/* display: flex; */
 		text-align: center;
 		padding: 1em;
 		/* max-width: 240px; */
